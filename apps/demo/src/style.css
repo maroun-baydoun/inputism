@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+:root {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  color: #171717;
+  background: #f5f5f5;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+}
+
+.demo-shell {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}

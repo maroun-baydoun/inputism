@@ -1,0 +1,40 @@
+{
+  "name": "inputism",
+  "version": "0.1.0",
+  "description": "Turn images into expressive checkbox-based visuals",
+  "type": "module",
+  "main": "dist/inputism.js",
+  "module": "dist/inputism.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/inputism.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE.md"
+  ],
+  "scripts": {
+    "build:clean": "rimraf dist",
+    "build:js": "vite build",
+    "build:types": "tsc --emitDeclarationOnly --declaration --declarationDir dist --project tsconfig.json",
+    "build": "pnpm run build:clean && pnpm run build:js && pnpm run build:types",
+    "prepublishOnly": "pnpm run build",
+    "release:patch": "pnpm version patch",
+    "release:minor": "pnpm version minor",
+    "release:major": "pnpm version major",
+    "release:beta": "pnpm version prerelease --preid beta",
+    "release:beta-major": "pnpm version premajor --preid beta",
+    "release:beta-minor": "pnpm version preminor --preid beta",
+    "release:beta-patch": "pnpm version prepatch --preid beta"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "rimraf": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:"
+  }
+}
