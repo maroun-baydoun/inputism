@@ -1,15 +1,417 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inputism demo</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Turn images into expressive checkbox-based visuals."
+    />
+    <title>Inputism | Turn images into expressive checkbox-based visuals</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareSourceCode",
+        "name": "Inputism",
+        "description": "Turn images into expressive checkbox-based visuals.",
+        "programmingLanguage": "TypeScript",
+        "runtimePlatform": "Web",
+        "isAccessibleForFree": true,
+        "license": "https://opensource.org/license/mit/"
+      }
+    </script>
   </head>
   <body>
-    <main class="demo-shell">
-      <h1>Inputism</h1>
-      <p>Demo app placeholder.</p>
-    </main>
+    <div class="page-shell">
+      <header>
+        <div><h1>Inputism</h1></div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-content">
+            <h2 class="hero-title">
+              Turn images into expressive checkbox-based visuals.
+            </h2>
+            <p class="hero-intro">
+              Inputism is a TypeScript library for turning image data into
+              expressive checkbox-based visuals.
+            </p>
+          </div>
+
+          <snippet-card title="Quick start" language-label="HTML">
+            <div data-snippet-header>
+              <span data-snippet-title></span>
+              <span data-snippet-language></span>
+            </div>
+            <pre><code data-code="quick-start" data-language="html"></code></pre>
+            <snippet-copy-button>Copy</snippet-copy-button>
+          </snippet-card>
+        </section>
+
+        <section class="page-section" data-project-specific>
+          <div class="section-header">
+            <h3>Examples</h3>
+            <p class="section-header-intro">
+              A small set of examples using the web component.
+            </p>
+          </div>
+
+          <div class="section-summary">
+            <label class="density-control">
+              <span>Density</span>
+              <input
+                class="density-range"
+                type="range"
+                min="8"
+                max="48"
+                value="32"
+                step="1"
+              />
+              <output class="density-value">32</output>
+            </label>
+          </div>
+
+          <snippet-card title="Local image" language-label="HTML">
+            <div data-snippet-header>
+              <span data-snippet-title></span>
+              <span data-snippet-language></span>
+            </div>
+            <pre><code data-code="local-example" data-language="html"></code></pre>
+            <snippet-copy-button>Copy</snippet-copy-button>
+          </snippet-card>
+
+          <div class="section-grid inputism-examples">
+            <article class="section-card">
+              <div class="section-card-head">
+                <h4 class="section-card-title">Original</h4>
+              </div>
+              <img
+                class="source-image"
+                src="/cat.jpg"
+                alt="Original local cat image"
+              />
+            </article>
+            <article class="section-card">
+              <div class="section-card-head">
+                <h4 class="section-card-title">Indeterminate</h4>
+              </div>
+              <inputism-image
+                src="/cat.jpg"
+                density="32"
+                mark="indeterminate"
+              ></inputism-image>
+            </article>
+            <article class="section-card">
+              <div class="section-card-head">
+                <h4 class="section-card-title">Checked</h4>
+              </div>
+              <inputism-image
+                src="/cat.jpg"
+                density="32"
+                mark="checked"
+              ></inputism-image>
+            </article>
+            <article class="section-card">
+              <div class="section-card-head">
+                <h4 class="section-card-title">Background</h4>
+              </div>
+              <inputism-image
+                src="/cat.jpg"
+                density="32"
+                mark="background"
+              ></inputism-image>
+            </article>
+          </div>
+
+          <section class="example-subsection" aria-label="Cross-origin source">
+            <div class="section-header">
+              <h3>Cross-origin source</h3>
+              <p class="section-header-intro">
+                This example uses an external image with anonymous CORS enabled.
+              </p>
+            </div>
+            <snippet-card title="Cross-origin image" language-label="HTML">
+              <div data-snippet-header>
+                <span data-snippet-title></span>
+                <span data-snippet-language></span>
+              </div>
+              <pre><code data-code="cross-origin-example" data-language="html"></code></pre>
+              <snippet-copy-button>Copy</snippet-copy-button>
+            </snippet-card>
+            <div class="cross-origin-grid inputism-examples">
+              <article class="section-card">
+                <div class="section-card-head">
+                  <h4 class="section-card-title">Original</h4>
+                </div>
+                <img
+                  class="source-image"
+                  crossorigin="anonymous"
+                  src="https://images.pexels.com/photos/34574310/pexels-photo-34574310.jpeg"
+                  alt="Original cross-origin image"
+                />
+              </article>
+              <article class="section-card">
+                <div class="section-card-head">
+                  <h4 class="section-card-title">Indeterminate</h4>
+                </div>
+                <inputism-image
+                  crossorigin="anonymous"
+                  src="https://images.pexels.com/photos/34574310/pexels-photo-34574310.jpeg"
+                  density="32"
+                  mark="indeterminate"
+                ></inputism-image>
+              </article>
+              <article class="section-card">
+                <div class="section-card-head">
+                  <h4 class="section-card-title">Checked</h4>
+                </div>
+                <inputism-image
+                  crossorigin="anonymous"
+                  src="https://images.pexels.com/photos/34574310/pexels-photo-34574310.jpeg"
+                  density="32"
+                  mark="checked"
+                ></inputism-image>
+              </article>
+              <article class="section-card">
+                <div class="section-card-head">
+                  <h4 class="section-card-title">Background</h4>
+                </div>
+                <inputism-image
+                  crossorigin="anonymous"
+                  src="https://images.pexels.com/photos/34574310/pexels-photo-34574310.jpeg"
+                  density="32"
+                  mark="background"
+                ></inputism-image>
+              </article>
+            </div>
+          </section>
+
+          <section class="example-subsection" aria-label="Encoded image source">
+            <div class="section-header">
+              <h3>Encoded image source</h3>
+              <p class="section-header-intro">
+                Pass an encoded image data URL directly through
+                <code>src</code> or assign it from JavaScript.
+              </p>
+            </div>
+            <snippet-card title="Pass it in HTML" language-label="HTML">
+              <div data-snippet-header>
+                <span data-snippet-title></span>
+                <span data-snippet-language></span>
+              </div>
+              <pre><code data-code="encoded-image-html" data-language="html"></code></pre>
+              <snippet-copy-button>Copy</snippet-copy-button>
+            </snippet-card>
+            <snippet-card
+              title="Assign it in JavaScript"
+              language-label="TypeScript"
+            >
+              <div data-snippet-header>
+                <span data-snippet-title></span>
+                <span data-snippet-language></span>
+              </div>
+              <pre><code data-code="encoded-image-js" data-language="typescript"></code></pre>
+              <snippet-copy-button>Copy</snippet-copy-button>
+            </snippet-card>
+            <div class="section-grid encoded-image-example">
+              <article class="section-card">
+                <div class="section-card-head">
+                  <h4 class="section-card-title">Original</h4>
+                </div>
+                <img
+                  class="source-image encoded-source-image"
+                  alt="Encoded source image"
+                />
+              </article>
+              <article class="section-card">
+                <div class="section-card-head">
+                  <h4 class="section-card-title">Inputism</h4>
+                </div>
+                <inputism-image
+                  class="encoded-example-image"
+                  density="32"
+                  mark="indeterminate"
+                ></inputism-image>
+              </article>
+            </div>
+          </section>
+
+          <section class="example-subsection" aria-label="Accessible label">
+            <div class="section-header">
+              <h3>Accessible label</h3>
+              <p class="section-header-intro">
+                The component applies <code>role="img"</code> to its internal
+                grid. Use <code>label</code> like an <code>alt</code> value to
+                name that image.
+              </p>
+            </div>
+            <snippet-card title="Label the image" language-label="HTML">
+              <div data-snippet-header>
+                <span data-snippet-title></span>
+                <span data-snippet-language></span>
+              </div>
+              <pre><code data-code="label-example" data-language="html"></code></pre>
+              <snippet-copy-button>Copy</snippet-copy-button>
+            </snippet-card>
+            <div class="section-grid inputism-examples">
+              <article class="section-card">
+                <div class="section-card-head">
+                  <h4 class="section-card-title">Labeled image</h4>
+                </div>
+                <inputism-image
+                  src="/cat2.jpg"
+                  density="32"
+                  mark="indeterminate"
+                  label="A tabby cat lying on a patterned rug"
+                ></inputism-image>
+              </article>
+            </div>
+          </section>
+        </section>
+
+        <section class="page-section" aria-label="Raw HTML export">
+          <div class="section-header">
+            <h3>Raw HTML export</h3>
+            <p class="section-header-intro">
+              Render the grid as ordinary HTML with styles embedded directly in
+              the generated elements.
+            </p>
+          </div>
+          <snippet-card
+            title="Embed styles in HTML"
+            language-label="TypeScript"
+          >
+            <div data-snippet-header>
+              <span data-snippet-title></span>
+              <span data-snippet-language></span>
+            </div>
+            <pre><code data-code="raw-html-example" data-language="typescript"></code></pre>
+            <snippet-copy-button>Copy</snippet-copy-button>
+          </snippet-card>
+          <div class="section-grid inputism-examples">
+            <article class="section-card">
+              <div class="section-card-head">
+                <h4 class="section-card-title">Generated HTML</h4>
+              </div>
+              <div class="raw-html-output"></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="page-section" aria-label="Error handling example">
+          <div class="section-header">
+            <h3>Error handling</h3>
+            <p class="section-header-intro">
+              Listen for <code>inputism-error</code> and decide how your
+              application presents it.
+            </p>
+          </div>
+
+          <snippet-card title="Listen for errors" language-label="TypeScript">
+            <div data-snippet-header>
+              <span data-snippet-title></span>
+              <span data-snippet-language></span>
+            </div>
+            <pre><code data-code="error-handler" data-language="typescript"></code></pre>
+            <snippet-copy-button>Copy</snippet-copy-button>
+          </snippet-card>
+
+          <article class="section-card error-example-card">
+            <div class="section-card-head">
+              <h4 class="section-card-title">Live example</h4>
+            </div>
+            <inputism-image
+              class="error-example-image"
+              src="/missing-image.jpg"
+              density="32"
+              mark="indeterminate"
+            ></inputism-image>
+            <p class="error-example-output" role="status">
+              Waiting for the component to emit <code>inputism-error</code>…
+            </p>
+          </article>
+        </section>
+
+        <section class="page-section">
+          <div class="section-header">
+            <h3>Install</h3>
+            <p class="section-header-intro">
+              Add Inputism to a TypeScript project.
+            </p>
+          </div>
+
+          <chip-tabs data-default-tab="npm">
+            <div data-tablist aria-label="Package manager">
+              <button type="button" data-tab="npm">npm</button>
+              <button type="button" data-tab="pnpm">pnpm</button>
+              <button type="button" data-tab="yarn">yarn</button>
+            </div>
+            <div data-tab-panels>
+              <snippet-card data-tab-panel="npm">
+                <pre><code data-code="install-npm" data-language="shell"></code></pre>
+                <snippet-copy-button>Copy</snippet-copy-button>
+              </snippet-card>
+              <snippet-card data-tab-panel="pnpm">
+                <pre><code data-code="install-pnpm" data-language="shell"></code></pre>
+                <snippet-copy-button>Copy</snippet-copy-button>
+              </snippet-card>
+              <snippet-card data-tab-panel="yarn">
+                <pre><code data-code="install-yarn" data-language="shell"></code></pre>
+                <snippet-copy-button>Copy</snippet-copy-button>
+              </snippet-card>
+            </div>
+          </chip-tabs>
+        </section>
+
+        <section class="page-section" aria-label="API">
+          <div class="section-header">
+            <h3>API</h3>
+            <p class="section-header-intro">
+              Sources provide pixels, the core creates the image model, and
+              renderers display it.
+            </p>
+          </div>
+          <div class="api-list">
+            <p>
+              <code>inputism/element</code> registers the preferred
+              <code>&lt;inputism-image&gt;</code> web component.
+            </p>
+            <p>
+              <code>createInputismImage(rgbaImage, options)</code> creates a
+              complete image model.
+            </p>
+            <p>
+              <code>createInputismImageFromUrl(source, options)</code> loads a
+              browser image source and creates the model.
+            </p>
+            <p>
+              <code>createInputismLayout(width, height, options)</code> creates
+              the stable cell layout.
+            </p>
+            <p>
+              <code>createInputismColors(rgbaImage, layout)</code> samples RGB
+              colors for that layout.
+            </p>
+            <p>
+              <code>renderInputismHtml(container, image, options)</code> creates
+              raw HTML, with optional inline styles.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <nav aria-label="Footer links">
+          <a href="https://dev.maroun-baydoun.com">See other projects</a>
+          <a href="https://github.com/maroun-baydoun/inputism">Source</a>
+        </nav>
+        <span>
+          © <copyright-year>2026</copyright-year>
+          <a href="https://github.com/maroun-baydoun">Maroun Baydoun</a>
+        </span>
+      </footer>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

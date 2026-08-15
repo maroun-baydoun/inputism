@@ -1,12 +1,16 @@
 # Inputism
 
-Inputism is a TypeScript library workspace for turning images into expressive checkbox-based visuals.
+Inputism is a TypeScript library for turning image data into
+checkbox-based visuals.
 
-The repository contains:
+The workspace contains:
 
-- `packages/inputism` — the publishable library
+- `packages/inputism` — the library package
 - `apps/demo` — a Vite demo application
-- `packages/test` — library tests
+- `packages/test` — package tests
+
+The preferred entry point is the `<inputism-image>` web component. The library
+also exposes the image model, source adapters, and HTML renderer it uses.
 
 ## Development
 

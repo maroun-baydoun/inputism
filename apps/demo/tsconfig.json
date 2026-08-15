@@ -4,7 +4,9 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "paths": {
-      "inputism": ["../../packages/inputism/src/index.ts"]
+      "inputism/element": ["../../packages/inputism/src/element.ts"],
+      "inputism/html": ["../../packages/inputism/src/html.ts"],
+      "inputism/source": ["../../packages/inputism/src/source.ts"]
     },
     "strict": true,
     "target": "ES2020",
