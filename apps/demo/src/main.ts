@@ -3,10 +3,12 @@ import "./components/chip-tabs";
 import "./components/copyright-year";
 import "./components/snippet-copy-button";
 import "./components/snippet-card";
-import "inputism/element";
+import { defineInputismElement } from "inputism/element";
 import { loadEncodedImage } from "./encoded-image";
 import { renderInputismHtml } from "inputism/html";
 import { createInputismImageFromUrl } from "inputism/source";
+
+defineInputismElement();
 
 const densityRange = document.querySelector<HTMLInputElement>(".density-range");
 const densityValue =
