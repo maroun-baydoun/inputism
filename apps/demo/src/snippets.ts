@@ -2,10 +2,10 @@
 // edited as demo content without mixing them with build setup.
 export const snippets: Record<string, string> = {
   "quick-start": `<script type="module" src="https://esm.sh/inputism/element"></script>
-<inputism-image src="/cat.jpg" density="32" mark="checked"></inputism-image>`,
-  "local-example": `<inputism-image src="/cat.jpg" density="32" mark="checked"></inputism-image>
-<inputism-image src="/cat.jpg" density="32" mark="indeterminate"></inputism-image>
-<inputism-image src="/cat.jpg" density="32" mark="background"></inputism-image>`,
+<inputism-image src="cat.jpg" density="32" mark="checked"></inputism-image>`,
+  "local-example": `<inputism-image src="cat.jpg" density="32" mark="checked"></inputism-image>
+<inputism-image src="cat.jpg" density="32" mark="indeterminate"></inputism-image>
+<inputism-image src="cat.jpg" density="32" mark="background"></inputism-image>`,
   "cross-origin-example": `<inputism-image
   crossorigin="anonymous"
   src="https://images.pexels.com/photos/34574310/pexels-photo-34574310.jpeg"
@@ -13,13 +13,13 @@ export const snippets: Record<string, string> = {
   mark="checked"
 ></inputism-image>`,
   "label-example": `<inputism-image
-  src="/cat2.jpg"
+  src="cat2.jpg"
   density="32"
   mark="checked"
   label="A tabby cat lying on a patterned rug"
 ></inputism-image>`,
   "lazy-example": `<inputism-image
-  src="/cat4.jpg"
+  src="cat4.jpg"
   loading="lazy"
   density="32"
   mark="checked"
@@ -27,7 +27,7 @@ export const snippets: Record<string, string> = {
   "raw-html-example": `import { createInputismImageFromUrl } from "inputism/source";
 import { renderInputismHtml } from "inputism/html";
 
-const image = await createInputismImageFromUrl("/cat.jpg", {
+const image = await createInputismImageFromUrl("cat.jpg", {
   density: 32,
 });
 const container = document.querySelector(".raw-html-output");

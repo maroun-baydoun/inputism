@@ -28,15 +28,14 @@ const encodedImageElements = [
     ".encoded-source-image, .encoded-example-image",
   ),
 ];
-
-void loadEncodedImage("/cat3.jpg").then((encodedImage) => {
+void loadEncodedImage("cat3.jpg").then((encodedImage) => {
   encodedImageElements.forEach((element) => {
     element.setAttribute("src", encodedImage);
   });
 });
 
 if (rawHtmlOutput) {
-  void createInputismImageFromUrl("/cat.jpg", { density: 32 }).then((image) => {
+  void createInputismImageFromUrl("cat.jpg", { density: 32 }).then((image) => {
     renderInputismHtml(rawHtmlOutput, image, {
       mark: "checked",
       inlineStyles: true,

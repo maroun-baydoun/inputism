@@ -5,6 +5,7 @@ import { demoCodePlugin } from "./src/demo-code-plugin";
 import { snippets } from "./src/snippets";
 
 export default defineConfig({
+  base: "/inputism/",
   plugins: [tailwindcss(), demoCodePlugin(snippets)],
   resolve: {
     alias: {
