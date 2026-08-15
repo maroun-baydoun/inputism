@@ -18,6 +18,8 @@ other source that produces RGBA data without changing the image model.
 npm install inputism
 ```
 
+[View inputism on npm](https://www.npmjs.com/package/inputism)
+
 ## Quick start
 
 Load the web-component entry once. It registers `<inputism-image>` and

@@ -12,6 +12,10 @@ The workspace contains:
 The preferred entry point is the `<inputism-image>` web component. The library
 also exposes the image model, source adapters, and HTML renderer it uses.
 
+[View on npm](https://www.npmjs.com/package/inputism) ·
+[View the demo](https://dev.maroun-baydoun.com/inputism/) ·
+[View the source](https://github.com/maroun-baydoun/inputism)
+
 ## Development
 
 ```bash

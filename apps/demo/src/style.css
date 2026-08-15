@@ -67,6 +67,10 @@
     @apply text-lg font-semibold uppercase tracking-[0.2em] text-foreground;
   }
 
+  header nav {
+    @apply flex flex-wrap items-center gap-2;
+  }
+
   main {
     @apply flex flex-1 flex-col items-start gap-12 py-10;
     @apply sm:py-14 lg:py-20;

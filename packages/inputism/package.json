@@ -6,6 +6,7 @@
     "type": "git",
     "url": "https://github.com/maroun-baydoun/inputism.git"
   },
+  "homepage": "https://dev.maroun-baydoun.com/inputism/",
   "type": "module",
   "main": "dist/core.js",
   "module": "dist/core.js",
