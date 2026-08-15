@@ -1,6 +1,6 @@
 {
   "name": "inputism",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Turn images into expressive checkbox-based visuals",
   "type": "module",
   "main": "dist/core.js",
