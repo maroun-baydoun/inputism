@@ -37,7 +37,10 @@ void loadEncodedImage("/cat3.jpg").then((encodedImage) => {
 
 if (rawHtmlOutput) {
   void createInputismImageFromUrl("/cat.jpg", { density: 32 }).then((image) => {
-    renderInputismHtml(rawHtmlOutput, image, { inlineStyles: true });
+    renderInputismHtml(rawHtmlOutput, image, {
+      mark: "checked",
+      inlineStyles: true,
+    });
   });
 }
 

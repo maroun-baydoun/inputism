@@ -94,22 +94,22 @@
             </article>
             <article class="section-card">
               <div class="section-card-head">
-                <h4 class="section-card-title">Indeterminate</h4>
-              </div>
-              <inputism-image
-                src="/cat.jpg"
-                density="32"
-                mark="indeterminate"
-              ></inputism-image>
-            </article>
-            <article class="section-card">
-              <div class="section-card-head">
                 <h4 class="section-card-title">Checked</h4>
               </div>
               <inputism-image
                 src="/cat.jpg"
                 density="32"
                 mark="checked"
+              ></inputism-image>
+            </article>
+            <article class="section-card">
+              <div class="section-card-head">
+                <h4 class="section-card-title">Indeterminate</h4>
+              </div>
+              <inputism-image
+                src="/cat.jpg"
+                density="32"
+                mark="indeterminate"
               ></inputism-image>
             </article>
             <article class="section-card">
@@ -153,17 +153,6 @@
               </article>
               <article class="section-card">
                 <div class="section-card-head">
-                  <h4 class="section-card-title">Indeterminate</h4>
-                </div>
-                <inputism-image
-                  crossorigin="anonymous"
-                  src="https://images.pexels.com/photos/34574310/pexels-photo-34574310.jpeg"
-                  density="32"
-                  mark="indeterminate"
-                ></inputism-image>
-              </article>
-              <article class="section-card">
-                <div class="section-card-head">
                   <h4 class="section-card-title">Checked</h4>
                 </div>
                 <inputism-image
@@ -171,6 +160,17 @@
                   src="https://images.pexels.com/photos/34574310/pexels-photo-34574310.jpeg"
                   density="32"
                   mark="checked"
+                ></inputism-image>
+              </article>
+              <article class="section-card">
+                <div class="section-card-head">
+                  <h4 class="section-card-title">Indeterminate</h4>
+                </div>
+                <inputism-image
+                  crossorigin="anonymous"
+                  src="https://images.pexels.com/photos/34574310/pexels-photo-34574310.jpeg"
+                  density="32"
+                  mark="indeterminate"
                 ></inputism-image>
               </article>
               <article class="section-card">
@@ -231,7 +231,7 @@
                 <inputism-image
                   class="encoded-example-image"
                   density="32"
-                  mark="indeterminate"
+                  mark="checked"
                 ></inputism-image>
               </article>
             </div>
@@ -262,8 +262,39 @@
                 <inputism-image
                   src="/cat2.jpg"
                   density="32"
-                  mark="indeterminate"
+                  mark="checked"
                   label="A tabby cat lying on a patterned rug"
+                ></inputism-image>
+              </article>
+            </div>
+          </section>
+
+          <section class="example-subsection" aria-label="Lazy loading">
+            <div class="section-header">
+              <h3>Lazy loading</h3>
+              <p class="section-header-intro">
+                Add <code>loading="lazy"</code> to wait until the component
+                approaches the viewport before decoding its source.
+              </p>
+            </div>
+            <snippet-card title="Load near the viewport" language-label="HTML">
+              <div data-snippet-header>
+                <span data-snippet-title></span>
+                <span data-snippet-language></span>
+              </div>
+              <pre><code data-code="lazy-example" data-language="html"></code></pre>
+              <snippet-copy-button>Copy</snippet-copy-button>
+            </snippet-card>
+            <div class="section-grid inputism-examples">
+              <article class="section-card">
+                <div class="section-card-head">
+                  <h4 class="section-card-title">Lazy image</h4>
+                </div>
+                <inputism-image
+                  src="/cat4.jpg"
+                  loading="lazy"
+                  density="32"
+                  mark="checked"
                 ></inputism-image>
               </article>
             </div>
@@ -325,7 +356,7 @@
               class="error-example-image"
               src="/missing-image.jpg"
               density="32"
-              mark="indeterminate"
+              mark="checked"
             ></inputism-image>
             <p class="error-example-output" role="status">
               Waiting for the component to emit <code>inputism-error</code>…

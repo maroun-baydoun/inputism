@@ -15,9 +15,11 @@ export class InputismElement extends HTMLElement {
     "max-rows",
     "crossorigin",
     "label",
+    "loading",
   ];
 
   private currentImage?: InputismImage;
+  private intersectionObserver?: IntersectionObserver;
   private sourceRequest = 0;
 
   constructor() {
@@ -30,13 +32,16 @@ export class InputismElement extends HTMLElement {
     // Render any assigned image first, then let the src adapter take over if
     // the element has a source attribute.
     this.render();
-    void this.loadSource();
+    if (this.getAttribute("src")) {
+      this.scheduleSourceLoad(true);
+    }
   }
 
   disconnectedCallback() {
     // Invalidate any in-flight source operation so a late image load cannot
     // render into an element that has left the document.
     this.sourceRequest += 1;
+    this.disconnectSourceObserver();
   }
 
   attributeChangedCallback(
@@ -49,12 +54,17 @@ export class InputismElement extends HTMLElement {
     }
 
     if (name === "src" || name === "crossorigin") {
-      void this.loadSource();
+      this.scheduleSourceLoad(true);
       return;
     }
 
     if (name === "density" || name === "max-rows") {
-      void this.loadSource();
+      this.scheduleSourceLoad(true);
+      return;
+    }
+
+    if (name === "loading") {
+      this.scheduleSourceLoad();
       return;
     }
 
@@ -66,8 +76,62 @@ export class InputismElement extends HTMLElement {
   }
 
   set image(value: InputismImage | undefined) {
+    this.sourceRequest += 1;
+    this.disconnectSourceObserver();
     this.currentImage = value;
     this.render();
+  }
+
+  private scheduleSourceLoad(forceReload = false) {
+    this.disconnectSourceObserver();
+
+    // forceReload is used after a source-affecting attribute changes. It
+    // invalidates pending work and clears the old model before reloading.
+    if (forceReload || !this.currentImage) {
+      this.sourceRequest += 1;
+    }
+
+    if (forceReload) {
+      this.currentImage = undefined;
+      this.render();
+    }
+
+    if (!this.getAttribute("src")) {
+      void this.loadSource();
+      return;
+    }
+
+    if (!forceReload && this.currentImage) {
+      return;
+    }
+
+    if (this.getAttribute("loading") !== "lazy") {
+      void this.loadSource();
+      return;
+    }
+
+    if (!("IntersectionObserver" in globalThis)) {
+      void this.loadSource();
+      return;
+    }
+
+    // Start slightly before the element enters the viewport so decoding can
+    // finish before the visual output becomes visible.
+    this.intersectionObserver = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          this.disconnectSourceObserver();
+          void this.loadSource();
+        }
+      },
+      { rootMargin: "200px" },
+    );
+    this.intersectionObserver.observe(this);
+  }
+
+  private disconnectSourceObserver() {
+    this.intersectionObserver?.disconnect();
+    this.intersectionObserver = undefined;
   }
 
   private async loadSource() {

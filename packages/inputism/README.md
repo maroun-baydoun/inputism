@@ -44,6 +44,7 @@ The component accepts these attributes:
 | `max-rows` | Positive integer | Upper limit for generated rows |
 | `crossorigin` | CORS mode | Request mode for remote images |
 | `label` | Text | Accessible name for the internal image |
+| `loading` | `lazy` | Wait until the element approaches the viewport |
 
 `label` is a component-specific attribute. The component applies
 `role="img"` to its internal grid and uses `label` as that role's
@@ -52,7 +53,9 @@ attribute is not applied to the host element. If it is omitted, the internal
 image has no accessible name.
 
 Changing `src`, `density`, or `max-rows` loads the source again. Changing
-`mark` updates the rendered cells.
+`mark` updates the rendered cells. Without `loading="lazy"`, sources load as
+soon as the component connects. Lazy sources use `IntersectionObserver` and
+load when they are near the viewport.
 
 ## Supplying encoded image data
 
@@ -218,7 +221,10 @@ For a complete model, use the one-step helper:
 ```ts
 import { renderInputismHtml } from "inputism/html";
 
-renderInputismHtml(container, image, { inlineStyles: true });
+renderInputismHtml(container, image, {
+  mark: "checked",
+  inlineStyles: true,
+});
 ```
 
 ## Web-component exports
