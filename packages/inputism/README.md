@@ -1,7 +1,7 @@
 # Inputism
 
-Inputism converts image pixels into a compact model of colored cells. The
-preferred way to display that model is the `<inputism-image>` web component.
+Inputism turns images into checkbox mosaics. The preferred way to display that
+model is the `<inputism-image>` web component.
 
 The library keeps these concerns separate:
 

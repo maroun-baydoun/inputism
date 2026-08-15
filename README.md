@@ -1,7 +1,6 @@
 # Inputism
 
-Inputism is a TypeScript library for turning image data into
-checkbox-based visuals.
+Inputism is a TypeScript library for turning images into checkbox mosaics.
 
 The workspace contains:
 

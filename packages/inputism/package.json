@@ -1,7 +1,7 @@
 {
   "name": "inputism",
   "version": "0.0.2",
-  "description": "Turn images into expressive checkbox-based visuals",
+  "description": "Turn images into checkbox mosaics",
   "repository": {
     "type": "git",
     "url": "https://github.com/maroun-baydoun/inputism.git"
