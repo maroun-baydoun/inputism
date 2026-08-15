@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Inputism — Turn images into checkbox mosaics.</title>
+  <desc id="description">A colorful checkbox mosaic.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#020617" />
+      <stop offset="1" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#020617" stop-opacity=".98" />
+      <stop offset=".7" stop-color="#020617" stop-opacity=".78" />
+      <stop offset="1" stop-color="#020617" stop-opacity="0" />
+    </linearGradient>
+    <pattern id="mosaic" width="208" height="208" patternUnits="userSpaceOnUse">
+      <rect width="208" height="208" fill="#111827" />
+      <rect x="8" y="8" width="42" height="42" rx="12" fill="#99f6e4" stroke="#ccfbf1" stroke-width="2" />
+      <path d="m17 29 8 8 16-20" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" />
+      <rect x="58" y="8" width="42" height="42" rx="12" fill="#c4b5fd" stroke="#ddd6fe" stroke-width="2" />
+      <path d="m67 29 8 8 16-20" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" />
+      <rect x="108" y="8" width="42" height="42" rx="12" fill="#bef264" stroke="#d9f99d" stroke-width="2" />
+      <path d="m117 29 8 8 16-20" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" />
+      <rect x="158" y="8" width="42" height="42" rx="12" fill="#111827" stroke="#64748b" stroke-width="2" />
+      <path d="m167 29 8 8 16-20" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" />
+      <rect x="8" y="58" width="42" height="42" rx="12" fill="#111827" stroke="#64748b" stroke-width="2" />
+      <path d="m17 79 8 8 16-20" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" />
+      <rect x="58" y="58" width="42" height="42" rx="12" fill="#67e8f9" stroke="#cffafe" stroke-width="2" />
+      <path d="m67 79 8 8 16-20" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" />
+      <rect x="108" y="58" width="42" height="42" rx="12" fill="#fb7185" stroke="#fecdd3" stroke-width="2" />
+      <path d="m117 79 8 8 16-20" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" />
+      <rect x="158" y="58" width="42" height="42" rx="12" fill="#99f6e4" stroke="#ccfbf1" stroke-width="2" />
+      <path d="m167 79 8 8 16-20" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" />
+      <rect x="8" y="108" width="42" height="42" rx="12" fill="#c4b5fd" stroke="#ddd6fe" stroke-width="2" />
+      <path d="m17 129 8 8 16-20" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" />
+      <rect x="58" y="108" width="42" height="42" rx="12" fill="#111827" stroke="#64748b" stroke-width="2" />
+      <path d="m67 129 8 8 16-20" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" />
+      <rect x="108" y="108" width="42" height="42" rx="12" fill="#bef264" stroke="#d9f99d" stroke-width="2" />
+      <path d="m117 129 8 8 16-20" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" />
+      <rect x="158" y="108" width="42" height="42" rx="12" fill="#fb7185" stroke="#fecdd3" stroke-width="2" />
+      <path d="m167 129 8 8 16-20" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" />
+      <rect x="8" y="158" width="42" height="42" rx="12" fill="#67e8f9" stroke="#cffafe" stroke-width="2" />
+      <path d="m17 179 8 8 16-20" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" />
+      <rect x="58" y="158" width="42" height="42" rx="12" fill="#c4b5fd" stroke="#ddd6fe" stroke-width="2" />
+      <path d="m67 179 8 8 16-20" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" />
+      <rect x="108" y="158" width="42" height="42" rx="12" fill="#111827" stroke="#64748b" stroke-width="2" />
+      <path d="m117 179 8 8 16-20" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" />
+      <rect x="158" y="158" width="42" height="42" rx="12" fill="#99f6e4" stroke="#ccfbf1" stroke-width="2" />
+      <path d="m167 179 8 8 16-20" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" />
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#background)" />
+  <circle cx="80" cy="-40" r="500" fill="#22d3ee" opacity=".16" />
+  <circle cx="1120" cy="580" r="330" fill="#c4b5fd" opacity=".1" />
+  <rect width="760" height="630" fill="url(#shade)" />
+
+  <g id="project-specific-graphic" transform="translate(790 105) rotate(7)">
+    <rect width="350" height="420" rx="34" fill="#07111f" stroke="#475569" stroke-width="3" />
+    <rect x="26" y="26" width="298" height="368" rx="22" fill="url(#mosaic)" />
+  </g>
+
+  <g font-family="Avenir Next, Segoe UI, Helvetica Neue, Arial, sans-serif">
+    <text x="78" y="270" fill="#f8fafc" font-size="98" font-weight="650" letter-spacing="-3">Inputism</text>
+    <text x="84" y="342" fill="#67e8f9" font-size="34" font-weight="600">Turn images into checkbox mosaics.</text>
+  </g>
+</svg>
