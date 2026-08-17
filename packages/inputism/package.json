@@ -2,6 +2,7 @@
   "name": "inputism",
   "version": "0.0.2",
   "description": "Turn images into checkbox mosaics",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/maroun-baydoun/inputism.git"
