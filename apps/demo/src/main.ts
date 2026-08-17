@@ -4,6 +4,7 @@ import "./components/copyright-year";
 import "./components/snippet-copy-button";
 import "./components/snippet-card";
 import { defineInputismElement } from "inputism/element";
+import type { InputismElement } from "inputism/element";
 import { loadEncodedImage } from "./encoded-image";
 import { renderInputismHtml } from "inputism/html";
 import { createInputismImageFromUrl } from "inputism/source";
@@ -18,12 +19,16 @@ const examples = [
     ".inputism-examples inputism-image",
   ),
 ];
-const errorExample = document.querySelector<HTMLElement>(
+const errorExample = document.querySelector<InputismElement>(
   ".error-example-image",
 );
 const errorOutput = document.querySelector<HTMLElement>(
   ".error-example-output",
 );
+const loadExample = document.querySelector<InputismElement>(
+  ".load-example-image",
+);
+const loadOutput = document.querySelector<HTMLElement>(".load-example-output");
 const rawHtmlOutput = document.querySelector<HTMLElement>(".raw-html-output");
 const encodedImageElements = [
   ...document.querySelectorAll<HTMLElement>(
@@ -55,8 +60,15 @@ densityRange?.addEventListener("input", () => {
   });
 });
 
+loadExample?.addEventListener("inputism-load", (event) => {
+  const image = event.detail;
+  if (loadOutput) {
+    loadOutput.textContent = `Loaded ${image.columns} × ${image.rows} cells.`;
+  }
+});
+
 errorExample?.addEventListener("inputism-error", (event) => {
-  const error = (event as CustomEvent<unknown>).detail;
+  const error = event.detail;
   errorOutput?.setAttribute("data-state", "error");
   if (errorOutput) {
     errorOutput.textContent = `Caught inputism-error: ${

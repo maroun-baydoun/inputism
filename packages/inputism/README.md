@@ -103,17 +103,40 @@ if (element) {
 red, green, blue, alpha order. The core downsamples those pixels into the
 requested layout.
 
-## Handling errors
+## Handling load and errors
 
-The component does not render an error message. If a `src` cannot be loaded,
-it emits a bubbling `inputism-error` event. The original error is available as
+After a `src` image has loaded, been converted, and rendered, the component
+emits a bubbling `inputism-load` event. `InputismElement` includes the custom
+event type, so the converted `InputismImage` model is available as the typed
 `event.detail`:
 
 ```ts
-const element = document.querySelector("inputism-image");
+import "inputism/element";
+import type { InputismElement } from "inputism/element";
+
+const element = document.querySelector<InputismElement>("inputism-image");
+const output = document.querySelector<HTMLElement>("[data-load-status]");
+
+element?.addEventListener("inputism-load", (event) => {
+  const image = event.detail;
+  if (output) {
+    output.textContent = `Loaded ${image.columns} × ${image.rows} cells.`;
+  }
+});
+```
+
+If a `src` cannot be loaded, the component does not render an error message. It
+instead emits a bubbling `inputism-error` event; the original error is
+available as `event.detail`:
+
+```ts
+import "inputism/element";
+import type { InputismElement } from "inputism/element";
+
+const element = document.querySelector<InputismElement>("inputism-image");
 
 element?.addEventListener("inputism-error", (event) => {
-  const error = (event as CustomEvent<unknown>).detail;
+  const error = event.detail;
   console.error("Inputism could not load the image", error);
 });
 ```

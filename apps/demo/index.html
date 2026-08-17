@@ -361,6 +361,47 @@
           </div>
         </section>
 
+        <section class="page-section" aria-label="Load event example">
+          <div class="section-header">
+            <h3>Load event</h3>
+            <p class="section-header-intro">
+              Listen for <code>inputism-load</code> after the image has been
+              converted and rendered.
+            </p>
+          </div>
+
+          <snippet-card
+            title="Listen for successful loads"
+            language-label="TypeScript"
+          >
+            <div data-snippet-header>
+              <span data-snippet-title></span>
+              <span data-snippet-language></span>
+            </div>
+            <pre>
+              <code data-code="load-handler" data-language="typescript"></code>
+            </pre>
+            <snippet-copy-button>Copy</snippet-copy-button>
+          </snippet-card>
+
+          <div class="section-grid inputism-examples">
+            <article class="section-card load-example-card">
+              <div class="section-card-head">
+                <h4 class="section-card-title">Live example</h4>
+              </div>
+              <inputism-image
+                class="load-example-image"
+                src="cat.jpg"
+                density="32"
+                mark="checked"
+              ></inputism-image>
+              <p class="event-example-output load-example-output" role="status">
+                Waiting for the component to emit <code>inputism-load</code>…
+              </p>
+            </article>
+          </div>
+        </section>
+
         <section class="page-section" aria-label="Error handling example">
           <div class="section-header">
             <h3>Error handling</h3>
@@ -389,7 +430,7 @@
               density="32"
               mark="checked"
             ></inputism-image>
-            <p class="error-example-output" role="status">
+            <p class="event-example-output error-example-output" role="status">
               Waiting for the component to emit <code>inputism-error</code>…
             </p>
           </article>

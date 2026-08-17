@@ -7,6 +7,11 @@ import { createInputismHtml, getRenderMark } from "./renderer";
 import type { InputismHtmlStyles } from "./renderer";
 import type { InputismImage } from "./types";
 
+type InputismEventMap = HTMLElementEventMap & {
+  "inputism-load": CustomEvent<InputismImage>;
+  "inputism-error": CustomEvent<unknown>;
+};
+
 export class InputismElement extends HTMLElement {
   static observedAttributes = [
     "src",
@@ -25,6 +30,23 @@ export class InputismElement extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
+  }
+
+  addEventListener<K extends keyof InputismEventMap>(
+    type: K,
+    listener: (event: InputismEventMap[K]) => void,
+    options?: boolean | AddEventListenerOptions,
+  ): void;
+  addEventListener(
+    type: string,
+    listener: EventListenerOrEventListenerObject | null,
+    options?: boolean | AddEventListenerOptions,
+  ): void {
+    if (listener === null) {
+      return;
+    }
+
+    super.addEventListener(type, listener, options);
   }
 
   connectedCallback() {
@@ -167,6 +189,14 @@ export class InputismElement extends HTMLElement {
 
       this.currentImage = image;
       this.render();
+      // Tell consumers when loading succeeds.
+      this.dispatchEvent(
+        new CustomEvent<InputismImage>("inputism-load", {
+          detail: image,
+          bubbles: true,
+          composed: true,
+        }),
+      );
     } catch (error) {
       if (request !== this.sourceRequest) {
         return;
@@ -174,7 +204,7 @@ export class InputismElement extends HTMLElement {
 
       this.render();
       this.dispatchEvent(
-        new CustomEvent("inputism-error", {
+        new CustomEvent<unknown>("inputism-error", {
           detail: error,
           bubbles: true,
           composed: true,

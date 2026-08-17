@@ -24,6 +24,18 @@ export const snippets: Record<string, string> = {
   density="32"
   mark="checked"
 ></inputism-image>`,
+  "load-handler": `import "inputism/element";
+import type { InputismElement } from "inputism/element";
+
+const image = document.querySelector<InputismElement>("inputism-image");
+const output = document.querySelector<HTMLElement>(".load-example-output");
+
+image?.addEventListener("inputism-load", (event) => {
+  const loadedImage = event.detail;
+  if (output) {
+    output.textContent = \`Loaded \${loadedImage.columns} × \${loadedImage.rows} cells.\`;
+  }
+});`,
   "raw-html-example": `import { createInputismImageFromUrl } from "inputism/source";
 import { renderInputismHtml } from "inputism/html";
 
@@ -38,10 +50,13 @@ if (container) {
     inlineStyles: true,
   });
 }`,
-  "error-handler": `const image = document.querySelector("inputism-image");
+  "error-handler": `import "inputism/element";
+import type { InputismElement } from "inputism/element";
+
+const image = document.querySelector<InputismElement>("inputism-image");
 
 image?.addEventListener("inputism-error", (event) => {
-  const error = (event as CustomEvent<unknown>).detail;
+  const error = event.detail;
   console.error("Inputism could not load the image", error);
 });`,
   "encoded-image-html": `<!-- The full base64 value is shortened here. -->

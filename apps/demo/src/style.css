@@ -187,7 +187,7 @@
   .section-card .source-image {
     @apply mt-4 block h-auto w-full rounded-xl;
   }
-  .error-example-output {
+  .event-example-output {
     @apply mt-4 text-sm leading-6 text-muted;
   }
   .error-example-output[data-state="error"] {
